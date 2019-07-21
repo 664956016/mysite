@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格显示页面</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+<h1 align="center" style="color: crimson">设备部零件管理后台</h1>
+{% if dele_msg %}
+    <h2 style="color: #791F16">操作消息:{{ dele_msg }}</h2>
+{% endif %}
+
+{% if edit_msg %}
+    <h2 style="color: darkblue">操作消息:{{ edit_msg }}</h2>
+{% endif %}
+
+{% if add_msg %}
+    <h2 style="color: darkslategray">操作消息:{{ add_msg }}</h2>
+{% endif %}
+
+<h2 id="show_table" style="color: darkcyan">修改与添加栏：</h2>
+
+<div id="hiden_area">
+    <form action="{% url 'jump' %}" method="post">
+        编辑栏id: <input id="ed_input" type="text" name="edit"/>
+        编辑动作:
+        <select name="ed_way">
+            <option value="dele">删除</option>
+            <option value="edit">修改</option>
+            <option value="add">增加</option>
+        </select>
+        <input type="submit" value="Submit"/>
+    </form>
+    <br><br>
+</div>
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+    <tr>
+        <th>id号</th>
+        <th>申购时间</th>
+        <th>零件名称</th>
+        <th>设备名称</th>
+        <th>资产类型</th>
+        <th>型号</th>
+        <th>品牌</th>
+        <th>详细细节</th>
+        <th>数量</th>
+        <th>单位</th>
+        <th>用途</th>
+        <th>采购人</th>
+        <th>申购人</th>
+        <th>即用|备用</th>
+        <th>上传图片</th>
+    </tr>
+    </thead>
+</table>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "ajax": "/spares/datatables",
+            "columns": [
+                {"data": "id号"},
+                {"data": "申购时间"},
+                {"data": "零件名称"},
+                {"data": "设备名称"},
+                {"data": "资产类型"},
+                {"data": "型号"},
+                {"data": "品牌"},
+                {"data": "详细细节"},
+                {"data": "数量"},
+                {"data": "单位"},
+                {"data": "用途"},
+                {"data": "采购人"},
+                {"data": "申购人"},
+                {"data": "即用备用"},
+                {"data": "是否上传图片"},
+            ],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json"
+            }
+        });
+    });
+</script>
+</html>

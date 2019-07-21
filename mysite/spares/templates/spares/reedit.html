@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change</title>
+</head>
+<body>
+    <h1>即将修改第 {{ getid }} 行的数据。</h1>
+    <h2 style="color: darkred">{{ msg }}</h2>
+    <form action="{% url 'changed' getid %}" method="post">
+        <input id="ll" type="text" name="my_id" placeholder="Id" value="{{ row_val.id }}"/>
+        <input id="1" type="text" name="apply_time" placeholder="申购时间格式:2019-6-12" value="{{ row_val.申购时间 }}"/>
+        <input id="2" type="text" name="spare_name" placeholder="零件名称" value="{{ row_val.零件名称 }}"/>
+        <input id="3" type="text" name="equip_name" placeholder="设备名" value="{{ row_val.设备名 }}"/>
+        <input id="4" type="text" name="asset" placeholder="资产类型" value="{{ row_val.资产类型 }}"/>
+        <input id="5" type="text" name="mod_number" placeholder="型号" value="{{ row_val.型号 }}"/>
+        <input id="6" type="text" name="brand" placeholder="品牌" value="{{ row_val.品牌 }}"/>
+        <input id="7" type="text" name="detail" placeholder="详细细节" value="{{ row_val.详细细节 }}"/><br><br>
+        <input id="8" type="text" name="number" placeholder="数量" value="{{ row_val.数量 }}"/>
+        <input id="9" type="text" name="unit" placeholder="单位" value="{{ row_val.单位 }}"/>
+        <input id="10" type="text" name="usage" placeholder="用途" value="{{ row_val.用途 }}"/>
+        <input id="11" type="text" name="applyer" placeholder="采购人" value="{{ row_val.采购人 }}"/>
+        <input id="12" type="text" name="user" placeholder="申购人" value="{{ row_val.申购人 }}"/>
+        <input id="13" type="text" name="hurry" placeholder="即用|备用" value="{{ row_val.即用备用 }}"/>
+        <input id="14" type="text" name="pic" placeholder="是否上传图片" value="{{ row_val.是否有图片附件 }}"/>
+        <input id="15" type="submit" name="submit"/><br><br><br>
+    </form>
+</div>
+</body>
+</html>
