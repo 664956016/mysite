@@ -93,9 +93,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tzhspares',
         'USER':'root',
-        'PASSWORD':'664956',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'PASSWORD':'bttzh664956',
+        'HOST':'tttzh.f3322.net',
+        'PORT':'13306',
     }
 }
 
