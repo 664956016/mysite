@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%!9t(w92$l+b$fhw-uxr*havm@x=o1yy0_v!3#)$k36^z(fqp3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['www.tangzihao.top', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -141,5 +141,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "spares/static/"),
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #D:\tzhproject\mysite\spares\static\spares\css\style.css
